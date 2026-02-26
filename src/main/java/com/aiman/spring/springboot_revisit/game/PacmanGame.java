@@ -1,5 +1,8 @@
 package com.aiman.spring.springboot_revisit.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PacmanGame implements GamingConsole{
     public void up() {
         System.out.println("PacmanGame Jump");
