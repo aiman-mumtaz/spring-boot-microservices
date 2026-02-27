@@ -8,8 +8,12 @@ import com.aiman.spring.springboot_revisit.enterprise.example.business.BusinessS
 
 @Component
 public class MyController {
-    @Autowired BusinessService businessService;
-    
+    @Autowired
+    BusinessService businessService;
+
+    MyController(BusinessService businessService){
+        this.businessService = businessService;
+    }
     public long returnValueFromService(){
         return businessService.calculateSum();
     }

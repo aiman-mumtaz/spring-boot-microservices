@@ -9,8 +9,12 @@ import com.aiman.spring.springboot_revisit.enterprise.example.data.DataService;
 
 @Component
 public class BusinessService {
-    @Autowired DataService dataService;
+    @Autowired
+    DataService dataService;
 
+    BusinessService(DataService dataService){
+        this.dataService = dataService;
+    }
     public long calculateSum(){
         List<Integer> data =dataService.getData();
         return data.stream().reduce(Integer::sum).get();
